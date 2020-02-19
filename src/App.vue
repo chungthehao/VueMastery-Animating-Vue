@@ -121,6 +121,9 @@ ul {
 .slide-up-enter-active {
   transition: all .5s ease;
 }
+.slide-up-move {
+  transition: transform .8s ease-in;
+}
 
 
 </style>
