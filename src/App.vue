@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Modal</router-link> |
       <router-link to="/about">About</router-link>
     </div>
+    
     <router-view />
   </div>
 </template>
@@ -51,5 +52,20 @@ button {
   margin-top: 20px;
   border-radius: 2%;
   background-color: #e0e0e0;
+}
+
+/*** TRANSITIONS ***/
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: opacity 2s ease-out;
+}
+
+.fade-leave-active {
+  transition: opacity 2s ease-out;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
