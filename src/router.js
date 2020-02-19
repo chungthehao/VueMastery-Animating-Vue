@@ -42,5 +42,10 @@ export default new Router({
       name: 'simple',
       component: () => import('./views/Simple.vue')
     },
+    {
+      path: '/stagger',
+      name: 'stagger',
+      component: () => import('./views/Stagger.vue')
+    },
   ]
 });
