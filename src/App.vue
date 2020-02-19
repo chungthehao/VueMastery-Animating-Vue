@@ -112,4 +112,15 @@ ul {
   opacity: 0;
   transform: translateX(-20px);
 }
+
+/** SLIDE UP */
+.slide-up-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.slide-up-enter-active {
+  transition: all .5s ease;
+}
+
+
 </style>
