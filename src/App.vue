@@ -2,7 +2,8 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Modal</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about">About</router-link> |
+      <router-link to="/list">List</router-link>
     </div>
 
     <transition name="slide-fade" mode="out-in">
@@ -22,16 +23,26 @@
 }
 
 button {
-  width: 5em;
-  height: 2em;
+  width: 8em;
+  height: 2.2em;
   margin: 0.5em;
-  border-radius: 5px;
+  border-radius: .3em;
   background: linear-gradient(to right, #16c0b0, #84cf6a);
-  font-size: 1em;
   color: white;
+  font-size: 1em;
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+input {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 30%;
+  height: 2.6em;
+  padding: 0.5em;
+  margin: 0.2em;
+  font: 0.8em 'Avenir', Helvetica, sans-serif;
 }
 
 #nav {
@@ -56,6 +67,17 @@ button {
   border-radius: 2%;
   background-color: #e0e0e0;
 }
+
+p {
+  font-size: 0.8em;
+}
+::placeholder {
+  color: #2c3e50;
+}
+ul {
+  list-style-type: none;
+}
+
 
 /*** TRANSITIONS ***/
 
