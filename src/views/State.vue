@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div :style="{ width: number + 'px' }" class="bar">
-      <span>{{ number }}</span>
+    <div :style="{ width: tweenedNumber + 'px' }" class="bar">
+      <span>{{ tweenedNumber.toFixed(0) }}</span>
     </div>
   </div>
 </template>
@@ -12,8 +12,22 @@ import gsap from 'gsap';
 export default {
   data() {
     return {
-      number: 0
+      number: 0,
+      tweenedNumber: 0
     }
+  },
+  watch: {
+      number(newVal) {
+          // animate our data
+          gsap.to(
+              this.$data, // Give GSAP access to our data
+              {
+                  duration: 1,
+                  ease: 'circ.out',
+                  tweenedNumber: newVal // GSAP tween up/down to the newVal
+              }
+          );
+      }
   },
   methods: {
     randomNumber() {
