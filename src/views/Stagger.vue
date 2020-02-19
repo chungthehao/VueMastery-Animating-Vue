@@ -20,7 +20,20 @@ export default {
     }
   },
   mounted() {
-    // stagger cards into position
+    gsap.from(
+        '.card', // element to animate 
+        {
+            duration: .5,
+            opacity: 0, // đi từ trong suốt
+            scale: 0, // đi từ nhỏ nhất
+            y: 200, // Mới đầu bị dịch xuống 200
+            ease: 'power1',
+            stagger: {
+                each: .1, // delay, trì hoãn mỗi stagger xuất hiện lần lượt lên screen
+                from: 'center' // Bình thường từ trái qua, thêm này thì từ giữa ra 2 bên
+            }
+        }
+    );
   }
 }
 </script>
