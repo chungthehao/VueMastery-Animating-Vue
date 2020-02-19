@@ -1,17 +1,29 @@
 <template>
-  <transition appear @before-enter="beforeEnter" @enter="enter" :css="false">
+  <transition 
+    appear 
+    @before-enter="beforeEnter" 
+    @enter="enter" 
+    :css="false"
+  >
     <div class="card"></div>
   </transition>
 </template>
 
 <script>
+import gsap from 'gsap';
+
 export default {
   methods: {
     beforeEnter(el) {
-      // starting style
+      el.style.opacity = 0;
+      el.style.transform = 'scale(0,0)';
     },
     enter(el, done) {
-      // style to transition to once entered
+      gsap.to(
+          el, // Element to animate
+          1, // duration 1 second
+          { opacity: 1, scale: 1, onComplete: done } // Styles it should enter to
+      );
     }
   }
 }
